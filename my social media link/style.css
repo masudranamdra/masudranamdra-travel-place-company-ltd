@@ -1,0 +1,314 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #00fcfc, #4fb5fd, #61b1f3);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    animation: gradientBG 15s ease infinite;
+    background-size: 400% 400%;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 1000px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 992px) {
+    .container {
+        flex-direction: row;
+    }
+}
+
+.profile-section {
+    background: linear-gradient(to bottom, #4facfe 0%, #00f2fe 100%);
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (min-width: 992px) {
+    .profile-section {
+        width: 35%;
+    }
+}
+
+.profile-picture {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid rgb(181, 221, 206);
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+    animation: float 4s ease-in-out infinite;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+}
+
+.shape-1 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(45deg, #cbc2d8 0%, #df8268 100%);
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    top: -50px;
+    left: -50px;
+    animation: move 15s linear infinite;
+}
+
+.shape-2 {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(45deg, #3264b4 0%, #c2e9fb 100%);
+    border-radius: 50% 50% 50% 70% / 50% 50% 70% 60%;
+    bottom: -30px;
+    right: -30px;
+    animation: move 12s linear infinite reverse;
+}
+
+.shape-3 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, #ca872a 0%, #6e77dc 100%);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    top: 50%;
+    left: 60%;
+    animation: move 8s linear infinite;
+}
+
+.profile-name {
+    margin-top: 20px;
+    color: rgb(108, 148, 39);
+    font-size: 24px;
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(31, 71, 201, 0.3);
+    z-index: 2;
+}
+
+.profile-title {
+    color: rgb(8, 141, 86);
+    margin-top: 5px;
+    font-size: 16px;
+    z-index: 2;
+}
+
+.links-section {
+    padding: 40px 30px;
+    flex: 1;
+}
+
+@media (min-width: 992px) {
+    .links-section {
+        width: 65%;
+    }
+}
+
+.section-title {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 4px;
+    background: linear-gradient(to right, #276e42, #4579d2);
+    border-radius: 2px;
+}
+
+.social-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: translateX(-100%);
+}
+
+.social-link:hover::before {
+    animation: shine 1.5s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.social-link:active {
+    transform: translateY(0);
+}
+
+.social-icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.social-icon i {
+    font-size: 24px;
+}
+
+.social-name {
+    font-size: 16px;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+}
+
+/* Social media specific colors */
+.facebook { background: linear-gradient(to right, #f0f4ff, #e0e8ff); }
+.facebook:hover { background: linear-gradient(to right, #1877f2, #166fe5); color: white; }
+
+.youtube { background: linear-gradient(to right, #fff0f0, #ffe0e0); }
+.youtube:hover { background: linear-gradient(to right, #ff0000, #e60000); color: white; }
+
+.twitter { background: linear-gradient(to right, #f0f8ff, #e0f0ff); }
+.twitter:hover { background: linear-gradient(to right, #1da1f2, #1a95e0); color: white; }
+
+.instagram { background: linear-gradient(to right, #fff0f8, #ffe0f0); }
+.instagram:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; }
+
+.github { background: linear-gradient(to right, #f8f8f8, #f0f0f0); }
+.github:hover { background: linear-gradient(to right, #333333, #24292e); color: white; }
+
+.linkedin { background: linear-gradient(to right, #f4f8ff, #e8f0ff); }
+.linkedin:hover { background: linear-gradient(to right, #0a66c2, #004182); color: white; }
+
+.tiktok { background: linear-gradient(to right, #fff0f5, #ffe0eb); }
+.tiktok:hover { background: linear-gradient(to right, #000000, #25f4ee, #fe2c55); color: white; }
+
+.whatsapp { background: linear-gradient(to right, #f0fff0, #e0ffe0); }
+.whatsapp:hover { background: linear-gradient(to right, #25d366, #128c7e); color: white; }
+
+.phone { background: linear-gradient(to right, #f0fff0, #e0ffe0); }
+.phone:hover { background: linear-gradient(to right, #34b7f1, #009688); color: white; }
+
+.telegram { background: linear-gradient(to right, #f0f8ff, #e0f0ff); }
+.telegram:hover { background: linear-gradient(to right, #0088cc, #005580); color: white; }
+
+.website { background: linear-gradient(to right, #fff8f0, #fff0e0); }
+.website:hover { background: linear-gradient(to right, #ff6b6b, #4ecdc4); color: white; }
+
+/* Animations */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes move {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes shine {
+    100% { transform: translateX(100%); }
+}
+
+.social-link:hover .social-icon {
+    transform: scale(1.3) rotate(10deg);
+}
+
+.social-link:hover .social-name {
+    transform: translateX(5px);
+}
+
+/* Pulse animation for important links */
+.phone, .whatsapp {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(52, 183, 241, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(52, 183, 241, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(52, 183, 241, 0); }
+}
+
+/* Ripple effect styles */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
