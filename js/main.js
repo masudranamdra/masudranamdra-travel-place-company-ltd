@@ -46,7 +46,7 @@ function nextSlide() {
 
 // Start slideshow
 if (backgroundSlider) {
-    setInterval(nextSlide, 5000);
+    setInterval(nextSlide, 3000);
 }
 
 // Video Modal

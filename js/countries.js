@@ -44,8 +44,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         Weather
                     </button>
                     </button>
-                    <button class=" Country Details" onclick="window.location.href='explore bangladesh.html'">
-                       Explore bangladesh
+                    <button class=" Country Details" onclick="window.location.href='imageg.html'">
+                       Image Gallary
                     </button>
                     <button class="btn-data" onclick="window.location.href='travel-form.html'">
                         Travel Data From
